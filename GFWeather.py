@@ -186,7 +186,7 @@ class gfweather:
         print('获取格言信息..')
         user_url = 'http://wufazhuce.com/'
         resp = requests.get(user_url, headers=self.headers)
-        soup_texts = BeautifulSoup(resp.text, 'lxml')
+        soup_texts = BeautifulSoup(resp.text, 'html')
         # 『one -个』 中的每日一句
         every_msg = soup_texts.find_all('div', class_='fp-one-cita')[0].find('a').text
         return every_msg + "\n"
